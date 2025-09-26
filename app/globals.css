@@ -1,0 +1,148 @@
+/* app/globals.css */
+@import "tailwindcss";
+
+/* Theme tokens */
+@theme {
+    --color-brand: #1363DF;
+}
+
+/* Utilities */
+@layer utilities {
+    .container {
+        @apply mx-auto max-w-[1280px] px-4;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+/* Prevent horizontal overflow globally */
+html, body {
+    height: 100%;
+}
+
+body, main {
+    overflow-x: clip;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+}
+
+:root {
+    --navbar-h: 56px;
+}
+
+/* Animations */
+@keyframes marquee-x {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee-x 30s linear infinite;
+}
+
+@keyframes marquee-vert-bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-18%);
+    }
+}
+
+.marquee-vert-bounce {
+    animation-name: marquee-vert-bounce;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    will-change: transform;
+}
+
+.marquee-vert-bounce.reverse {
+    animation-direction: alternate-reverse;
+}
+
+/* Mobile-optimized accordion animations */
+@keyframes accordion-down {
+    from {
+        opacity: 0;
+        height: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        height: var(--radix-accordion-content-height);
+        transform: translateY(0);
+    }
+}
+
+@keyframes accordion-up {
+    from {
+        opacity: 1;
+        height: var(--radix-accordion-content-height);
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        height: 0;
+        transform: translateY(-5px);
+    }
+}
+
+/* Force hardware acceleration for smooth animations on mobile */
+[data-radix-accordion-content] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+
+/* Sheet / Overlay keyframes for reliable mount/unmount animations */
+@keyframes sheet-enter {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes sheet-exit {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes overlay-enter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes overlay-exit {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
