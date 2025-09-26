@@ -9,10 +9,12 @@ const nextConfig = {
     images: {
         unoptimized: true,
         remotePatterns: [
-            {protocol: 'https', hostname: 'placehold.co'},
-            {protocol: 'https', hostname: 'images.unsplash.com'},
-            {protocol: 'https', hostname: 'i.imgur.com'}
-        ]
+            {
+                protocol: 'https',
+                hostname: '82bfzbmfzqycv70x.public.blob.vercel-storage.com',
+                port: '',
+            },
+        ],
     }
 };
 module.exports = nextConfig;

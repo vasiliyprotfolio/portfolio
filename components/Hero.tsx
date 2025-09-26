@@ -54,10 +54,10 @@ export default function Hero() {
                     animate={{opacity: 1, scale: 1}}
                     transition={{duration: 0.7, delay: 0.1}}
                     whileHover={{scale: 1.02}}
-                    className="relative mx-auto aspect-square w-full overflow-hidden rounded-3xl border border-gray-100 shadow-xl lg:shadow-2xl"
+                    className="relative mx-auto aspect-square w-full overflow-hidden rounded-3xl border border-gray-100 shadow-xl lg:shadow-2xl my-2"
                 >
                     <Image
-                        src="https://images.unsplash.com/photo-1622782914767-404fb9aaf1bb?q=80&w=1200&auto=format&fit=crop"
+                        src="https://82bfzbmfzqycv70x.public.blob.vercel-storage.com/497470474_18349670080155068_3024352313771039493_n.jpg"
                         alt="Orthopedics"
                         fill
                         className="object-cover"
@@ -65,7 +65,7 @@ export default function Hero() {
                     />
                     {/* soft pulse ring */}
                     <motion.div
-                        className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-brand/20"
+                        className="pointer-events-none absolute inset-0 ring-1 ring-brand/20"
                         animate={{boxShadow: ['0 0 0 0 rgba(19,99,223,0.35)', '0 0 0 14px rgba(19,99,223,0.00)']}}
                         transition={{repeat: Infinity, duration: 2.8, ease: 'easeOut'}}
                     />
@@ -76,7 +76,7 @@ export default function Hero() {
 
             {/* smoother seam into next section */}
             <div
-                className="pointer-events-none absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-white to-transparent"/>
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-28 sm:h-44 bg-gradient-to-t from-white to-transparent"/>
         </section>
     )
 }

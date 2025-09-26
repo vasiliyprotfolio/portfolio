@@ -54,11 +54,11 @@ export default function Reviews() {
                         ))}
                     </div>
                     <div className="mt-4 flex items-center justify-center gap-2 md:hidden">
-                        <button aria-label="Попередній" onClick={() => scrollBy(-280)}
+                        <button aria-label="Попередній" onClick={() => scrollBy(-320)}
                                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 cursor-pointer">
                             <ChevronLeft className="h-5 w-5"/>
                         </button>
-                        <button aria-label="Наступний" onClick={() => scrollBy(280)}
+                        <button aria-label="Наступний" onClick={() => scrollBy(320)}
                                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 cursor-pointer">
                             <ChevronRight className="h-5 w-5"/>
                         </button>

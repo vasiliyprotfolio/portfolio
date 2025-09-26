@@ -53,25 +53,25 @@ export const metadata: Metadata = {
         siteName: 'Фізор Василь Дмитрович — Ортопед-травматолог',
         title: 'Фізор Василь Дмитрович — Ортопед-травматолог (Одеса)',
         description: 'Сучасне лікування травм та захворювань суглобів. Дитяча ортопедія, ендопротезування, спортивні травми.',
-        // images: [
-        //     {
-        //         url: '/og-image.jpg',
-        //         width: 1200,
-        //         height: 630,
-        //         alt: 'Фізор Василь — ортопед-травматолог Одеса',
-        //         type: 'image/jpeg'
-        //     }
-        // ]
+        images: [
+            {
+                url: '/og.png',
+                width: 1200,
+                height: 630,
+                alt: 'Фізор Василь — ортопед-травматолог Одеса',
+                type: 'image/png'
+            }
+        ]
     },
 
     // Twitter/X Cards
     twitter: {
         card: 'summary_large_image',
-        site: '@fizor_vasyl', // Add if Twitter account exists
+        site: '@fizor_vasyl',
         creator: '@fizor_vasyl',
         title: 'Фізор Василь Дмитрович — Ортопед-травматолог',
         description: 'Ендопротезування, дитяча ортопедія, спортивні травми.',
-        // images: ['/og-image.jpg']
+        images: ['/og.png']
     },
 
     // Robots and indexing
@@ -133,7 +133,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             addressLocality: 'Одеса',
             addressRegion: 'Одеська область',
             addressCountry: 'UA',
-            postalCode: '65000' // Add specific postal code if available
+            postalCode: '65000'
         },
 
         // Medical specialties with proper Schema.org types
@@ -207,7 +207,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         // Professional membership
         memberOf: {
             '@type': 'MedicalOrganization',
-            name: 'Асоціація ортопедів-травматологів України'
+            name: 'Медичний дім Odrex'
         },
 
         // Languages spoken
@@ -257,9 +257,10 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
 
             {/* Favicon and app icons */}
-            {/*<link rel="icon" href="/favicon.ico" sizes="32x32"/>*/}
-            {/*<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>*/}
-            {/*<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>*/}
+            <link rel="icon" href="/favicon.ico" sizes="48x48"/>
+            <link rel="icon" href="/icon.svg" type="image/svg+xml"/>
+            <link rel="icon" href="/icon.png" type="image/png"/>
+            <link rel="apple-touch-icon" href="/apple-icon.png"/>
 
             {/* DNS prefetch for better performance */}
             <link rel="dns-prefetch" href="//www.google-analytics.com"/>
