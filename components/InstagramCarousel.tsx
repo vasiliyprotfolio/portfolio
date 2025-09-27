@@ -8,8 +8,8 @@ export default function InstagramCarousel() {
 
     return (
         <section id="instagram" className="py-16 md:py-24 max-w-full">
-            <div className="container px-4 mx-auto max-w-7xl">
-                <div className="flex items-center justify-between mb-8">
+            <div className="md:px-4 mx-auto container">
+                <div className="flex items-center justify-between mb-8 px-4 md:px-0">
                     <div className="flex items-center space-x-3">
                         <div
                             className="w-12 h-12 bg-gradient-to-tr from-brand via-white to-brand rounded-full flex items-center justify-center">
@@ -23,14 +23,14 @@ export default function InstagramCarousel() {
                     </a>
                 </div>
 
-                <div className="relative overflow-hidden rounded-3xl ring-2 ring-brand shadow-2xl bg-white">
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-white">
                     {/* Gradient overlays for smooth edges */}
                     <div
-                        className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+                        className="absolute left-0 top-0 bottom-0 w-10 md:w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
                     <div
-                        className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+                        className="absolute right-0 top-0 bottom-0 w-10 md:w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
-                    <div className="flex animate-marquee-endless py-8 px-4" style={{width: 'max-content'}}>
+                    <div className="flex animate-marquee-endless py-8 md:px-4" style={{width: 'max-content'}}>
                         {duplicatedItems.map((item, idx) => (
                             <a
                                 key={idx}
