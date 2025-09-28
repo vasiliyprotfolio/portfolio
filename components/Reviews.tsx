@@ -2,7 +2,7 @@
 import {useRef} from 'react'
 import {reviews} from '../lib/reviews'
 import {Card, CardContent, CardHeader} from './ui/card'
-import {Quote, ChevronLeft, ChevronRight} from 'lucide-react'
+import {Quote, ChevronLeft, ChevronRight, BookHeart} from 'lucide-react'
 import {motion} from 'framer-motion'
 
 export default function Reviews() {
@@ -17,7 +17,10 @@ export default function Reviews() {
             <div className="container">
                 <div className="flex items-center justify-between">
                     <div>
-                        <h2 className="text-2xl font-semibold">Відгуки пацієнтів</h2>
+                        <div className="flex items-center justify-start gap-2">
+                            <BookHeart className="w-6 h-6 text-brand"/>
+                            <h2 className="text-2xl font-semibold">Відгуки пацієнтів</h2>
+                        </div>
                         <p className="mt-1 text-gray-600">Реальні історії одужання та досвід пацієнтів.</p>
                     </div>
                     <div className="hidden gap-2 md:flex">
@@ -47,7 +50,7 @@ export default function Reviews() {
                                             className="text-sm font-medium">{r.name}</span></div>
                                     </CardHeader>
                                     <CardContent>
-                                        <p className="text-sm leading-relaxed text-gray-700 whitespace-pre-wrap">{r.text}</p>
+                                        <p className="text-sm leading-relaxed text-gray-700 whitespace-pre-wrap text-pretty">{r.text}</p>
                                     </CardContent>
                                 </Card>
                             </motion.div>

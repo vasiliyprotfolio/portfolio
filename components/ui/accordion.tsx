@@ -17,7 +17,6 @@ export const AccordionTrigger = React.forwardRef<HTMLButtonElement, AccordionPri
             <AccordionPrimitive.Trigger
                 ref={ref}
                 className={cn(
-                    // add "group" so we can style children based on data-state on the trigger
                     'group flex flex-1 items-center justify-between py-4 text-left text-base font-medium transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
                     className
                 )}
@@ -25,10 +24,7 @@ export const AccordionTrigger = React.forwardRef<HTMLButtonElement, AccordionPri
             >
                 <span className="flex-1 pr-4 text-left">{children}</span>
                 <ChevronDown
-                    className={
-                        // rotate the icon when the trigger is open
-                        'h-5 w-5 shrink-0 transition-transform duration-200 ease-out group-data-[state=open]:rotate-180'
-                    }
+                    className="h-5 w-5 shrink-0 transition-transform duration-200 ease-out group-data-[state=open]:rotate-180"
                 />
             </AccordionPrimitive.Trigger>
         </AccordionPrimitive.Header>
@@ -37,22 +33,23 @@ export const AccordionTrigger = React.forwardRef<HTMLButtonElement, AccordionPri
 AccordionTrigger.displayName = 'AccordionTrigger'
 
 export const AccordionContent = React.forwardRef<HTMLDivElement, AccordionPrimitive.AccordionContentProps>(
-    ({className, children, ...props}, ref) => (
-        <AccordionPrimitive.Content
-            ref={ref}
-            className={cn(
-                'overflow-hidden text-gray-700 data-[state=open]:animate-[accordion-down_300ms_ease-out] data-[state=closed]:animate-[accordion-up_200ms_ease-in]',
-                className
-            )}
-            style={
-                {
+    ({className, children, ...props}, ref) => {
+        // Используем упрощенное решение с CSS-only анимацией
+        return (
+            <AccordionPrimitive.Content
+                ref={ref}
+                className={cn(
+                    'overflow-hidden text-gray-700 data-[state=open]:animate-[accordion-down_150ms_cubic-bezier(0.16,1,0.3,1)] data-[state=closed]:animate-[accordion-up_50ms_cubic-bezier(0.16,1,0.3,1)]',
+                    className
+                )}
+                style={{
                     '--radix-accordion-content-height': 'var(--radix-accordion-content-height)',
-                } as React.CSSProperties
-            }
-            {...props}
-        >
-            <div className="pb-4 pt-1 text-sm leading-relaxed will-change-auto">{children}</div>
-        </AccordionPrimitive.Content>
-    )
+                } as React.CSSProperties}
+                {...props}
+            >
+                <div className="pb-4 pt-1 text-sm leading-relaxed">{children}</div>
+            </AccordionPrimitive.Content>
+        );
+    }
 )
 AccordionContent.displayName = 'AccordionContent'

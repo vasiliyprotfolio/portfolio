@@ -11,15 +11,12 @@ export default function InstagramCarousel() {
             <div className="md:px-4 mx-auto container">
                 <div className="flex items-center justify-between mb-8 px-4 md:px-0">
                     <div className="flex items-center space-x-3">
-                        <div
-                            className="w-12 h-12 bg-gradient-to-tr from-brand via-white to-brand rounded-full flex items-center justify-center">
-                            <Instagram className="h-6 w-6 text-white"/>
-                        </div>
+                        <Instagram className="w-6 h-6 text-brand"/>
                         <h2 className="text-2xl font-semibold">Instagram</h2>
                     </div>
                     <a href="https://www.instagram.com/fizor_vasyl/" target="_blank" rel="noreferrer"
                        className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-brand">
-                        <Instagram className="h-4 w-4"/> Переглянути профіль
+                        Переглянути профіль
                     </a>
                 </div>
 

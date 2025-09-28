@@ -8,7 +8,6 @@ import {cn} from '../lib/utils'
 
 const links = [
     {href: '#about', label: 'Про лікаря'},
-    {href: '#services', label: 'Послуги'},
     {href: '#edu', label: 'Освіта'},
     {href: '#reviews', label: 'Відгуки'},
     {href: '#instagram', label: 'Instagram'},
@@ -60,19 +59,37 @@ export default function Navbar() {
                                 <Menu className="h-5 w-5"/>
                             </SheetTrigger>
 
-                            <SheetContent>
-                                <div className="mt-10 flex flex-col gap-4">
-                                    {links.map((l) => (
-                                        <SheetClose asChild key={l.href}>
-                                            <a href={l.href} className="text-base text-gray-900">
-                                                {l.label}
+                            <SheetContent className="overflow-y-auto py-4">
+                                <div className="flex flex-col">
+                                    {/* Navigation links */}
+                                    <nav className="flex-1">
+                                        <div className="flex flex-col space-y-1">
+                                            {links.map((l) => (
+                                                <SheetClose asChild key={l.href}>
+                                                    <a
+                                                        href={l.href}
+                                                        className="flex items-center px-3 py-3 text-base font-medium text-gray-700 rounded-lg hover:bg-gray-50 hover:text-brand transition-colors duration-200"
+                                                    >
+                                                        {l.label}
+                                                    </a>
+                                                </SheetClose>
+                                            ))}
+                                        </div>
+                                    </nav>
+
+                                    {/* Contact section */}
+                                    <div className="border-t border-gray-100 pt-6 pb-6">
+                                        <div className="space-y-3">
+                                            <p className="text-sm font-medium text-gray-500 px-3">Зв'язок</p>
+                                            <a
+                                                href="tel:+380502626666"
+                                                className="flex items-center gap-3 px-4 py-3 rounded-xl bg-brand text-white font-medium hover:bg-brand/90 transition-colors duration-200"
+                                            >
+                                                <Phone className="h-5 w-5"/>
+                                                050-262-66-66
                                             </a>
-                                        </SheetClose>
-                                    ))}
-                                    <a href="tel:+380502626666"
-                                       className="mt-2 inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 text-white">
-                                        <Phone className="h-5 w-5"/> 050-262-66-66
-                                    </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </SheetContent>
                         </Sheet>
